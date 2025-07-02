@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Auth System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Dashboard</h1>
+                <div class="user-menu">
+                    <span class="welcome-text">Welcome, {{ name }}!</span>
+                    <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+                </div>
+            </div>
+        </header>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <main class="dashboard-main">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">👤</div>
+                    <h3>Profile</h3>
+                    <p>Manage your account settings and personal information</p>
+                    <button class="btn-secondary">View Profile</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Analytics</h3>
+                    <p>View your activity statistics and usage data</p>
+                    <button class="btn-secondary">View Stats</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Settings</h3>
+                    <p>Configure your preferences and account settings</p>
+                    <button class="btn-secondary">Open Settings</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Messages</h3>
+                    <p>Check your messages and notifications</p>
+                    <button class="btn-secondary">View Messages</button>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">🔐</div>
+                        <div class="activity-content">
+                            <h4>Account Login</h4>
+                            <p>You successfully logged into your account</p>
+                            <span class="activity-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

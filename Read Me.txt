@@ -1,0 +1,89 @@
+# Simple Flask Login System
+
+A basic user authentication system built with Python and Flask.  
+This project allows users to register and log in using a simple interface and backend logic.
+
+## 🔧 Features
+
+- User Registration
+- User Login
+- Password Hashing
+- Session Management
+- Flash Messages for Feedback
+
+## 🚀 Technologies Used
+
+- Python 3.x
+- Flask
+- SQLite (for data storage)
+- Werkzeug (for password hashing)
+
+## 📁 Project Structure
+
+```
+📦 flask-auth-system/
+├── app.py              # Main Flask application
+├── templates/          # HTML templates (login.html, register.html, etc.)
+├── static/             # Static files (CSS, JS)
+├── database.db         # SQLite database
+└── README.md           # Project documentation
+```
+
+## 📥 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/flask-auth-system.git
+   cd flask-auth-system
+   ```
+
+2. **Create a virtual environment (recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install the requirements:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the app:**
+   ```bash
+   python app.py
+   ```
+
+5. **Open in browser:**
+   ```
+   http://127.0.0.1:5000/
+   ```
+
+## 🧪 Example Input/Output
+
+**Registration Input:**
+- Username: `john`
+- Password: `123456`
+
+**Output:**
+- Flash message: `Registration successful. Please log in.`
+
+**Login Input:**
+- Username: `john`
+- Password: `123456`
+
+**Output:**
+- Flash message: `Welcome, john!`
+- Redirect to homepage
+
+## 📌 Notes
+
+- Make sure to install Flask before running the project.
+- This is a basic demo; for production use, always secure sessions, use environment variables, and more advanced security practices.
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ using Flask
